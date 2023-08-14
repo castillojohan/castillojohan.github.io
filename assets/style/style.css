@@ -472,3 +472,12 @@ footer p:hover{
         font-size: 15px;
     }
 }
+
+@media(max-width:430px){
+    header{
+        max-height: 200px;
+    }
+    .header__skills__tree{
+        display: none;
+    }
+}
