@@ -159,6 +159,7 @@ main h2{
 
 .main__about-me p{
     margin-bottom: 15px;
+    letter-spacing: 1.5px;
 }
 .main__about-me img{
     margin-right:1em ;
@@ -177,7 +178,9 @@ main h2{
 .main__about-me img+img{
     position: absolute;
 }
-
+.main__about-me span{
+    cursor: pointer;
+}
 
 div.main__gallery-title{
     text-align: center;
@@ -332,7 +335,7 @@ article img:hover{
     background-color: #29232e;
     cursor: pointer;
 }
-.main__professionnal-job--hidden{
+.main__professionnal-job--hidden,.main__about-me--hidden{
     display:none;
 }
 .show{

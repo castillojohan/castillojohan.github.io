@@ -5,13 +5,18 @@ const professionnalDetails = {
         for (const job of jobs) {
             job.addEventListener('click', professionnalDetails.handleClickJob);
         }
+        const aboutMe = document.querySelector('.main__about-me span');
+        aboutMe.addEventListener('click', professionnalDetails.handleClickAbout);
     },
 
     handleClickJob :function(evt){
         const hiddenEl = evt.currentTarget.lastElementChild;
-        console.log(hiddenEl);
         hiddenEl.classList.toggle('show');
     },
 
+    handleClickAbout :function(evt){
+        contentToReveal = document.querySelector(".main__about-me--hidden");
+        contentToReveal.classList.toggle('show')
+    }
 }
 document.addEventListener('DOMContentLoaded', professionnalDetails.init);
