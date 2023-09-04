@@ -18,7 +18,7 @@ body{
     background-color: #281b25;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.2);
 }
-h1, h2, h3, h4, h5, strong{
+h1, h2, h3, h4, h5, strong, div img+p{
     font-family: 'Orbitron', sans-serif;
 }
 
@@ -48,11 +48,23 @@ h1{
 header div{
     margin: 2em 0 0 3em;
 }
+
 .header__right-pic{
     width:80px;
     height:80px;
-    margin: 2em 3em;
-    border-radius:.3em;
+    margin:0 2em 2em 3em;
+}
+.header__img{
+    position: relative;
+}
+div img+p{
+    margin-top: -5px;
+    background-color: #2b303a;
+    color: #b9c0b7;
+    position: absolute;
+    right: 32px;
+    bottom:20px;
+    width:80px
 }
 
 nav{
@@ -470,6 +482,11 @@ footer p:hover{
         width:60px;
         height: 60px;
     }
+    div img+p{
+        font-size: 12px;
+        width:60px;
+    }
+
     nav{
         display:none;
     }
@@ -499,6 +516,9 @@ footer p:hover{
     }
     .header__skills__tree{
         display: none;
+    }
+    div img+p{
+        bottom: 18px
     }
     .main__about-me h2 + div{
         flex-direction: column;   
