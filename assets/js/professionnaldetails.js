@@ -16,7 +16,9 @@ const professionnalDetails = {
 
     handleClickAbout :function(evt){
         contentToReveal = document.querySelector(".main__about-me--hidden");
-        contentToReveal.classList.toggle('show')
+        contentToReveal.classList.toggle('show');
+
+        evt.currentTarget.classList.toggle('disapear');
     }
 }
 document.addEventListener('DOMContentLoaded', professionnalDetails.init);
