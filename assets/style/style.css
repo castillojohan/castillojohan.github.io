@@ -1,5 +1,4 @@
 html{
-    width:100%;
     background-color: #3d3743;
     color:#cbd4c2;
     width:90%;
@@ -12,12 +11,15 @@ a{
 body{
     width: 100%;
     height: auto;
+    font-family:'Oswald', sans-serif;
     margin: 0 auto;
-    font-family: 'Orbitron', sans-serif;
     border-radius: 20px;
     line-height: 1.8em;
     background-color: #281b25;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.2);
+}
+h1, h2, h3, h4, h5, strong{
+    font-family: 'Orbitron', sans-serif;
 }
 
 .principal{
@@ -123,7 +125,7 @@ main h2{
 .main__about-me::after{
     content:"";
     width:50%;
-    margin: 0 auto;
+    margin: 2em auto;
     border-top: 5px solid whitesmoke;
     border-radius: 50%;
 }
@@ -132,9 +134,10 @@ main h2{
     flex-direction: column;
     align-items: center;
     padding:1em;
-    margin: 0 auto;
-    font-size: 18px;
-    width:80%;
+    font-size: 25px;
+    margin: 2em auto 2em auto;
+    letter-spacing: 1.3px;
+    width:90%;
     box-sizing: border-box;
 }
 .main__about-me h2{
@@ -148,19 +151,24 @@ main h2{
     align-self: start;
     margin-left: 10%;
 }
-
+.main__about-me p{
+    margin-top: 1em;
+}
 .main__about-me div+div{
     display: flex;
     flex-direction: column;
     position:relative;
     margin-top: 2em;
-    max-width: 80%;
+    max-width: 100%;
+}
+.main__about-me--develop{
+    font-weight: bolder;
+    margin: 0 auto;
+}
+.disapear{
+    display:none;
 }
 
-.main__about-me p{
-    margin-bottom: 15px;
-    letter-spacing: 1.5px;
-}
 .main__about-me img{
     margin-right:1em ;
     width: 150px;
@@ -191,8 +199,9 @@ div.main__gallery-title{
 .main__gallery{
     border-top: 5px solid whitesmoke;
     border-bottom: 5px solid whitesmoke;
-    border-radius: 20px;
-    width:60%;
+    border-radius: 10px;
+    width:80%;
+    font-size: 20px;
     margin: 4em auto;
     padding:1em;
 }
@@ -227,6 +236,7 @@ article{
 }
 
 article img+p{
+    font-size: 20px;
     position: absolute;
     background-color: black;
     color: white;
@@ -251,7 +261,7 @@ article img:hover{
     margin: 0 auto;
 }
 .container{
-    width:80%;
+    width:100%;
     margin: 0 auto;
 }
 
@@ -277,12 +287,13 @@ article img:hover{
     align-items: center;
 }
 
-.main__professionnal-job span {
-    font-size: 14px;
+.main__professionnal-job span{
+    font-size: 18px;
     color: #97b196;
     border: 2px solid #535c68;
     padding: 4px;
     border-radius: 8px;
+    margin-top: 0.8em;
     margin-left: 0.8em;
     
 }
@@ -295,7 +306,7 @@ article img:hover{
 
 .main__professionnal-job p{
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 19px;
     text-align: center;
 }
 .main__professionnal-job h3{
@@ -438,10 +449,10 @@ footer p:hover{
         flex-wrap: wrap;
     }
     .main__professionnal h2{
-        font-size: 16px;
+        font-size: 18px;
     }
-    .main__professionnal-job span{
-        font-size: 12px;
+    .main__about-me div + div{
+        width:80%;
     }
 }
 
@@ -472,8 +483,14 @@ footer p:hover{
     }
     .main__about-me{
         text-align: center;
-        font-size: 15px;
+        font-size: 17px;
     }
+    div.main__about-me--container-row{
+        display: flex;
+        flex-direction: column;
+    }
+
+
 }
 
 @media(max-width:430px){
@@ -482,5 +499,8 @@ footer p:hover{
     }
     .header__skills__tree{
         display: none;
+    }
+    .main__about-me h2 + div{
+        flex-direction: column;   
     }
 }
