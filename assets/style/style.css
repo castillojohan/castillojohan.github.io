@@ -81,41 +81,6 @@ nav a:hover{
     color:#cbd4c2;
     border-radius: 5px;
 }
-.header__skills{
-    display: flex;
-    flex-direction: row;
-}
-.header__skills__tree{
-    display:flex;
-    flex-wrap: wrap;
-    width:80%;
-    justify-content: center;
-    align-items: center;
-    gap: 1.3em;
-    margin: 2.5em auto;
-}
-.header__skills__tree img{
-    width:65px;
-    height:65px;
-}
-.header__skills__tree--hover-html:hover{
-    filter: drop-shadow(0 0 0.60rem whitesmoke);
-}
-.header__skills__tree--hover-css:hover{
-    filter: drop-shadow(0 0 0.60rem blue);
-}
-.header__skills__tree--hover-git:hover{
-    filter: drop-shadow(0 0 0.60rem crimson);
-}
-.header__skills__tree--hover-js:hover{
-    filter: drop-shadow(0 0 0.40rem black);
-}
-.header__skills__tree--hover-php:hover{
-    filter: drop-shadow(0 0 0.60rem darkblue);
-}
-.header__skills__tree--hover-python:hover{
-    filter: drop-shadow(0 0 0.40rem yellow);
-}
 
 main{
     margin: 0 auto;
@@ -200,6 +165,38 @@ main h2{
 }
 .main__about-me span{
     cursor: pointer;
+}
+
+.main__skills::before{
+    content:"";
+    border: 3px solid;
+    border-radius: 50%;
+    width:50%;
+    margin: 1em auto;
+}
+.main__skills{
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    gap : 2em;
+}
+.main__skills__tree{
+    display: flex;
+    flex-direction: row;
+    gap:1em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.main__skills__tree p{
+    background-color: #3d3743;
+    padding: 1em;
+    font-size: 18px;
+    border: .1em solid #cbd4c2;
+    border-radius: 3px;
+    
 }
 
 div.main__gallery-title{
@@ -509,7 +506,6 @@ footer p:hover{
 
 
 }
-
 @media(max-width:430px){
     header{
         max-height: 200px;
