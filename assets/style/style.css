@@ -58,8 +58,9 @@ header div{
 .header__img{
     position: relative;
 }
-div img+p{
+.header__img-student{
     margin-top: -5px;
+    width:80px;
     background-color: #2b303a;
     color: #b9c0b7;
     position: absolute;
@@ -92,29 +93,13 @@ main h2{
     margin-top: 1em;
 
 }
-/* .main__about-me::before{
-    content:"";
-    width:50%;
-    margin: 0 auto;
-    border-top: 5px solid whitesmoke;
-    border-radius: 50%;
-}
-.main__about-me::after{
-    content:"";
-    width:50%;
-    margin: 2em auto;
-    border-top: 5px solid whitesmoke;
-    border-radius: 50%;
-} */
+
 .main__about-me{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding:1em;
     font-size: 25px;
     margin: 2em auto 2em auto;
     letter-spacing: 1.3px;
-    width:90%;
+    width:80%;
     box-sizing: border-box;
 }
 
@@ -130,13 +115,7 @@ main h2{
 .main__about-me p{
     margin-top: 1em;
 }
-.main__about-me div+div{
-    display: flex;
-    flex-direction: column;
-    position:relative;
-    margin-top: 2em;
-    max-width: 100%;
-}
+
 .main__about-me--develop{
     font-weight: bolder;
     margin: 0 auto;
@@ -158,6 +137,8 @@ main h2{
 }
 .main__about-me--container-row{
     position :relative;
+    display: flex;
+    flex-direction: row;
 }
 .main__about-me img+img{
     position: absolute;
@@ -185,7 +166,10 @@ main h2{
     justify-content: center;
     gap: 1em;
 }
-
+.main__skills__tree h3{
+    font-size:  24px;
+    margin-bottom: 1em;
+}
 .main__skills__tree ul{
     display: flex;
     flex-direction: row;
@@ -193,13 +177,82 @@ main h2{
     gap:1em;
 }
 .main__skills__tree li{
-    padding: 1em;
+    padding: 2em;
+    font-size: 20px;
     background-color:#3d3743;
     border: 1px solid #b9c0b7;
+    margin-bottom: 2em;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+.main__skills__tree li:hover{
+    background-color: #29232e;
+}
+.main__skills__tree li:nth-child(odd)::after{
+    content: "";
+    width: 60px;
+    height: 41px;
+    position: absolute;
+    top: -15px;
+    right: -24px;
+    background-color: var(--black-color);
+    transform: rotate(45deg);
+    border-bottom: 1px solid #cbd4c2;
+}
+.main__skills__tree li:nth-child(even)::before{
+    content: "";
+    width: 35px;
+    height: 24px;
+    position: absolute;
+    bottom: -9px;
+    left: -14px;
+    background-color: var(--black-color);
+    transform: rotate(45deg);
+    border-top:1px solid #cbd4c2;
+}
+
 .main__skills__tree>div:first-child{
-    border-right:1px solid #b9c0b7;
+    border-bottom:1px solid #b9c0b7;
+    width:80%;
+}
+.main__skills__tree__softs{
+    display: flex;
+    flex-direction: column;
     width:50%;
+    font-size: 22px;
+}
+.main__skills__tree__softs li img{
+    width:60px;
+}
+.main__skills__tree__softs li p{
+    font-size: 24px;
+}
+.main__skills__tree__softs h3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.main__skills__tree__softs h3>i{
+    background-color: #3d3743;
+    font-size: 14px;
+    border-radius: 50%;
+    border: 1px solid var(--white-color);
+    padding : 0px 10px;
+    position:relative;
+}
+.main__skills__tree__softs h3>i:hover:after, 
+.main__skills__tree__softs h3>i:focus:after{
+    content: attr(aria-label);  /* on affiche aria-label */
+    position: absolute;
+    z-index: 1; /* pour s'afficher au dessus des éléments en position relative */
+    padding: 10px 14px;
+    background: #3d3743;
+    color: #fff;
+    font-size: 1.2rem;
+    font-size: 14px;
+    border: 1px dashed #b9c0b7 ;
 }
 
 div.main__gallery-title{
@@ -456,6 +509,7 @@ footer section img:hover{
     font-size: 1.7rem;
     text-transform: uppercase;
     border: 1px solid #cbd4c2;
+    margin-bottom: 2em;
 }
 .cybr-btn::before{
     content: "";
