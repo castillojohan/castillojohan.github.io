@@ -1,3 +1,4 @@
+
 html{
     background-color: #3d3743;
     color:#cbd4c2;
@@ -64,7 +65,6 @@ div img+p{
     position: absolute;
     right: 32px;
     bottom:20px;
-    width:80px
 }
 
 nav{
@@ -81,41 +81,6 @@ nav a:hover{
     color:#cbd4c2;
     border-radius: 5px;
 }
-.header__skills{
-    display: flex;
-    flex-direction: row;
-}
-.header__skills__tree{
-    display:flex;
-    flex-wrap: wrap;
-    width:80%;
-    justify-content: center;
-    align-items: center;
-    gap: 1.3em;
-    margin: 2.5em auto;
-}
-.header__skills__tree img{
-    width:65px;
-    height:65px;
-}
-.header__skills__tree--hover-html:hover{
-    filter: drop-shadow(0 0 0.60rem whitesmoke);
-}
-.header__skills__tree--hover-css:hover{
-    filter: drop-shadow(0 0 0.60rem blue);
-}
-.header__skills__tree--hover-git:hover{
-    filter: drop-shadow(0 0 0.60rem crimson);
-}
-.header__skills__tree--hover-js:hover{
-    filter: drop-shadow(0 0 0.40rem black);
-}
-.header__skills__tree--hover-php:hover{
-    filter: drop-shadow(0 0 0.60rem darkblue);
-}
-.header__skills__tree--hover-python:hover{
-    filter: drop-shadow(0 0 0.40rem yellow);
-}
 
 main{
     margin: 0 auto;
@@ -127,7 +92,7 @@ main h2{
     margin-top: 1em;
 
 }
-.main__about-me::before{
+/* .main__about-me::before{
     content:"";
     width:50%;
     margin: 0 auto;
@@ -140,7 +105,7 @@ main h2{
     margin: 2em auto;
     border-top: 5px solid whitesmoke;
     border-radius: 50%;
-}
+} */
 .main__about-me{
     display: flex;
     flex-direction: column;
@@ -152,9 +117,7 @@ main h2{
     width:90%;
     box-sizing: border-box;
 }
-.main__about-me h2{
-    margin-bottom: 2em;
-}
+
 .main__about-me h2+div{
     display:flex;
     flex-direction: row;
@@ -162,6 +125,7 @@ main h2{
     align-items: center;  
     align-self: start;
     margin-left: 10%;
+    margin-top: 4em;
 }
 .main__about-me p{
     margin-top: 1em;
@@ -202,10 +166,53 @@ main h2{
     cursor: pointer;
 }
 
+.main__skills::before{
+    content:"";
+    border: 3px solid;
+    border-radius: 50%;
+    width:50%;
+    margin: 1em auto;
+}
+.main__skills{
+    margin-top: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 2em;
+}
+.main__skills__tree{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.main__skills__tree ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:1em;
+}
+.main__skills__tree li{
+    padding: 1em;
+    background-color:#3d3743;
+    border: 1px solid #b9c0b7;
+}
+.main__skills__tree>div:first-child{
+    border-right:1px solid #b9c0b7;
+    width:50%;
+}
+
 div.main__gallery-title{
     text-align: center;
     margin: 2em auto;
     width : 60%;
+}
+.main__skills__tree__softs ul{
+    display: inline;
+    flex-direction: column;
+}
+.main__skills__tree__softs img{
+    width: 50px;
 }
 
 .main__gallery{
@@ -248,7 +255,7 @@ article{
 }
 
 article img+p{
-    font-size: 20px;
+    font-size: 15px;
     position: absolute;
     background-color: black;
     color: white;
@@ -429,6 +436,51 @@ footer section img:hover{
 .hide{
     display: none;
 }
+/* Glitch test */
+:root{
+    --black-color: #281b25;
+    --main-color:#3d3743;
+    --red-color: #FF003C;
+    --blue-color: #00F0FF;
+    --white-color: #FAFAFA; 
+}
+.cybr-btn{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    outline: none;
+    background-color: var(--main-color);
+    cursor: pointer;
+    padding: 1.5em;
+    position: relative;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    border: 1px solid #cbd4c2;
+}
+.cybr-btn::before{
+    content: "";
+    width: 55px;
+    height: 35px;
+    position: absolute;
+    bottom: -11px;
+    left: -21px;
+    background-color: var(--black-color);
+    transform: rotate(45deg);
+    border-top:1px solid #cbd4c2;
+}
+.cybr-btn::after{
+    content: "";
+    width: 60px;
+    height: 41px;
+    position: absolute;
+    top: -15px;
+    right: -24px;
+    background-color: var(--black-color);
+    transform: rotate(45deg);
+    border-bottom: 1px solid #cbd4c2;
+}
+
+/* EndTest */
 
 /* Change theme button */
 footer p{
@@ -509,7 +561,6 @@ footer p:hover{
 
 
 }
-
 @media(max-width:430px){
     header{
         max-height: 200px;

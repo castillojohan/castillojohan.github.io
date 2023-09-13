@@ -17,7 +17,7 @@ const handleIntersectionX = function(entries, observerX){
 const handleIntersectionY = function(entries, observerY){
     for(const entry of entries){
         if(entry.intersectionRatio > ratio ){
-            observerX.unobserve(entry.target);
+            observerY.unobserve(entry.target);
             entry.target.classList.add('reveal-itemY');
         }        
     }
@@ -25,5 +25,10 @@ const handleIntersectionY = function(entries, observerY){
 
 const observerX = new IntersectionObserver(handleIntersectionX, option);
 const observerY = new IntersectionObserver(handleIntersectionY, option);
-observerX.observe(document.querySelector('.hide-itemX'));
+
+const hideElements = document.querySelectorAll('.hide-itemX')
+for(const hideElement of hideElements){
+    observerX.observe(hideElement);
+}
+
 observerY.observe(document.querySelector('.hide-itemY'));
