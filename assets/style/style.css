@@ -14,7 +14,6 @@ body{
     height: auto;
     font-family:'Oswald', sans-serif;
     margin: 0 auto;
-    border-radius: 20px;
     line-height: 1.8em;
     background-color: #281b25;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.2);
@@ -31,8 +30,9 @@ h1, h2, h3, h4, h5, strong, div img+p{
 header{
     background-image: url("../img/wallpaper.jpg");
     width:100%;
-    height:400px;
+    height:350px;
     color:white;
+    position:relative;
 }
 
 .header__banner{
@@ -41,6 +41,7 @@ header{
     justify-content: space-between;
     text-align: center;
     margin-top:0;
+    align-items: self-end;
 }
 h1{
     font-size: 3em;
@@ -69,18 +70,21 @@ header div{
 }
 
 nav{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 0;
+    background-color: #2b303a;
+    opacity: 0.7;
+    width: 100%;
 }
 nav a{
     margin: 0.5em 0.5em;
-    padding:0.8em;
-    width:80%;
     font-size: 20px;
 }
 nav a:hover{
-    background-color: black;
     color:#cbd4c2;
-    border-radius: 5px;
 }
 
 main{
@@ -149,8 +153,7 @@ main h2{
 
 .main__skills::before{
     content:"";
-    border: 3px solid;
-    border-radius: 50%;
+    border: 1px solid;
     width:50%;
     margin: 1em auto;
 }
@@ -174,6 +177,7 @@ main h2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap:1em;
 }
 .main__skills__tree li{
@@ -269,9 +273,8 @@ div.main__gallery-title{
 }
 
 .main__gallery{
-    border-top: 5px solid whitesmoke;
-    border-bottom: 5px solid whitesmoke;
-    border-radius: 10px;
+    border-top: 1px solid #c8d1bf;
+    border-bottom: 1px solid #c8d1bf;
     width:80%;
     font-size: 20px;
     margin: 4em auto;
@@ -293,7 +296,6 @@ div.main__gallery-title{
     margin-bottom: 2em;
     width:250px;
     height:320px;
-    border-radius: 10%;
     box-shadow: 6px 6px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -429,37 +431,37 @@ footer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border:3px solid whitesmoke;
-    border-radius: 5px;
+    border:1px solid #c8d1bf;
     padding: 1em;
     box-sizing: border-box;
-    color :whitesmoke;
+    color :#c8d1bf;
     align-items: center;
     width: 100%;
+    height: 120px;
 }
-footer section img{
-    width : 40px;
-    height: 40px;
-    padding: 0.5em;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
+footer section{
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+    position:relative;
+    margin-right: 1.5em;
 }
-@keyframes bounce {
-	0%, 100%, 20%, 50%, 80% {
-		transform:translateY(0)
-    }
-    40% {
-		transform:translateY(-30px)
-    }
-    60% {
-		transform:translateY(-15px)
-	}
+footer a{
+    font-size: 18px;
+    padding: 1em ;
+    background-color: #3d3743;
+    border: 1px solid #c8d1bf;
 }
-footer section img:hover{
-    cursor: pointer;
-    animation-name: bounce;
+footer a:after{
+    content: "";
+    position: absolute;
+    height: 25px;
+    width: 32px;
+    top: -10px;
+    transform:rotate(45deg);
+    background-color: #281b25;
+    border-bottom: 1px solid #c8d1bf;
+    
 }
 
 /* Smooth appear */
@@ -539,7 +541,6 @@ footer section img:hover{
 /* Change theme button */
 footer p{
     padding : 1em;
-    border-radius: 20px;
     background-color: whitesmoke;
     color : #281b25;
 }
@@ -548,10 +549,6 @@ footer p:hover{
     background-color: rgba(245, 245, 245, 0.767);
 }
 
-.light-theme{
-    background-color: whitesmoke;
-    color:#3d3743;
-}
 
 @media(max-width:1000px){
     html{
