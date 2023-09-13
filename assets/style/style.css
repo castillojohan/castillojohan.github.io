@@ -104,6 +104,8 @@ main h2{
     margin: 2em auto 2em auto;
     letter-spacing: 1.3px;
     width:80%;
+    border-bottom: 1px solid #cbd4c2 ;
+    max-width: 1000px;
     box-sizing: border-box;
 }
 
@@ -279,6 +281,7 @@ div.main__gallery-title{
     font-size: 20px;
     margin: 4em auto;
     padding:1em;
+    max-width: 1000px;
 }
 .main__gallery h2{
     margin-top: 1em;
@@ -333,6 +336,7 @@ article img:hover{
     position: relative;
     width: 80%;
     margin: 0 auto;
+    max-width: 1000px;
 }
 .container{
     width:100%;
@@ -555,9 +559,12 @@ footer p:hover{
         width: 100%;
     }
     .main__about-me{
-        width:unset;
+        width:90%;
         padding: 0;
         margin:1em auto ;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     .main__professionnal-job{
         box-sizing: border-box;
@@ -583,13 +590,12 @@ footer p:hover{
     }
     .header__right-pic{
         width:60px;
-        height: 60px;
+        height:60px;
     }
-    div img+p{
-        font-size: 12px;
+    .header__img-student{
         width:60px;
+        font-size: 13px;
     }
-
     nav{
         display:none;
     }
@@ -599,10 +605,12 @@ footer p:hover{
     .header__skills__tree img{
         width:40px;
         height: 40px;
-
     }
     .main__about-me{
-        text-align: center;
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         font-size: 17px;
     }
     div.main__about-me--container-row{
@@ -616,13 +624,42 @@ footer p:hover{
     header{
         max-height: 200px;
     }
-    .header__skills__tree{
-        display: none;
-    }
     div img+p{
         bottom: 18px
     }
+    .header__img-student{
+        width:60px;
+    }
     .main__about-me h2 + div{
         flex-direction: column;   
+    }
+    .main__about-me img + img{
+        display: none;
+    }
+    .main__about-me img{
+        margin: 1em auto;
+        transition: unset;
+    }
+    .main__about-me img:hover{
+        opacity: unset;
+    }
+    .main__about-me{
+        width:90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main__skills__tree__softs{
+        width:90%;
+    }
+    div.main__gallery-title{
+        width:90%;
+    }
+    a.glitch-contact{
+        font-size: 12px;
+    }
+    footer a::after{
+        width: 25px;
+        top: -13px;
     }
 }
