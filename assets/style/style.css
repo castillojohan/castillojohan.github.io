@@ -611,15 +611,19 @@ footer p:hover{
         margin:0.5em;
     }
     div.main__gallery-title{
-        width:90%;
+        width:80%;
     }
+    .cybr-btn{
+        font-size: 20px;
+    }
+
 }
 @media(max-width:430px){
     header{
         max-height: 200px;
     }
     h2.cybr-btn{
-        font-size: 20px;
+        font-size: 15px;
     }
     div img+p{
         bottom: 18px
@@ -665,4 +669,52 @@ footer p:hover{
     footer img{
         width: 30px;
     }
+}
+
+@media(max-width:350px){
+    html{
+        width:95%;
+        margin: 0 auto;
+    }
+    h2.cybr-btn{
+        font-size: 15px;
+    }
+    .main__about-me{
+        width:100%;
+    }
+    .main__professionnal{
+        width: 100%;
+    }
+    .container{
+        width:100%;
+    }
+    .main__professionnal-job{
+        margin : 1em;
+        width: 90%;
+    }
+    .main__professionnal-job h2, .main__professionnal-job span{
+        font-size: 12px;
+    }
+    #skills{
+        width:100%;
+    }
+    #skills h3{
+        font-size:15px;
+        padding-bottom: 2em;
+    }
+    #skills ul{
+        gap: 6px;
+        justify-content: space-around;
+    }
+    #skills li{
+        font-size: 12px;
+        width: 100%;
+    }
+    .main__skills__tree__softs li p{
+        font-size: 10px;
+    }
+    #gallery{
+        width:100%;
+    }
+
 }
