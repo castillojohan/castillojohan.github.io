@@ -26,7 +26,14 @@ h1, h2, h3, h4, h5, strong, div img+p{
     display: flex;
     flex-direction: column;
 }
-
+.border-right-bottom{
+    border-bottom: 1px solid #c8d1bf;
+    border-right: 1px solid #c8d1bf;
+}
+.border-left-bottom{
+    border-bottom: 1px solid #c8d1bf;
+    border-left: 1px solid #c8d1bf;
+}
 header{
     background-image: url("../img/wallpaper.jpg");
     width:100%;
@@ -101,10 +108,9 @@ main h2{
 .main__about-me{
     padding:1em;
     font-size: 25px;
-    margin: 2em auto 2em auto;
+    margin: 2em auto 0 auto;
     letter-spacing: 1.3px;
     width:80%;
-    border-bottom: 1px solid #cbd4c2 ;
     max-width: 1000px;
     box-sizing: border-box;
 }
@@ -153,18 +159,18 @@ main h2{
     cursor: pointer;
 }
 
-.main__skills::before{
-    content:"";
-    border: 1px solid;
-    width:50%;
-    margin: 1em auto;
-}
 .main__skills{
-    margin-top: 4em;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap : 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1em 0;
+}
+.hide-itemX{
+    width:80%;
+    margin : 0 auto;
 }
 .main__skills__tree{
     display: flex;
@@ -263,7 +269,7 @@ main h2{
 
 div.main__gallery-title{
     text-align: center;
-    margin: 2em auto;
+    margin: 0 auto;
     width : 60%;
 }
 .main__skills__tree__softs ul{
@@ -275,13 +281,11 @@ div.main__gallery-title{
 }
 
 .main__gallery{
-    border-top: 1px solid #c8d1bf;
-    border-bottom: 1px solid #c8d1bf;
     width:80%;
     font-size: 20px;
-    margin: 4em auto;
-    padding:1em;
-    max-width: 800px;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 1em 0 1em 0;
 }
 .main__gallery h2{
     margin-top: 1em;
@@ -291,9 +295,9 @@ div.main__gallery-title{
     display:flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 1em;
     gap: 3em;
-    
+    width: 80%;
+    margin: 1em auto;
 }
 .main__gallery__portfolio img{
     margin-bottom: 2em;
@@ -339,30 +343,47 @@ article img:hover{
     max-width: 1000px;
 }
 .container{
-    width:100%;
-    margin: 0 auto;
+    width:80%;
+    margin: 0em auto;
+    max-width: 1000px;
+    padding: 1em 0;
 }
 
-.main__professionnal:before {
-    content: '';
-    width: 8px;
-    height: 100%;
-    background: #313131;
+
+.main__professionnal-job:nth-child(even)::before{
+    content:"";
+    width: 39px; 
+    height: 40px;
+    transform: rotate(45deg);
+    position:absolute;
+    background-color: #281b25;
+    border-left: 1px solid #cbd4c2;
+    right:-20px;
+    bottom: -20px;
+}
+.main__professionnal-job:nth-child(odd)::after{
+    content: "";
+    width: 32px;
+    height: 23px;
+    transform: rotate(45deg);
     position: absolute;
-    left: 20px;
+    background-color: #281b25;
+    border-right: 1px solid #cbd4c2;
+    left: -20px;
+    top: -15px;
 }
 
 .main__professionnal-job {
     background-color: #3d3743;
     padding: 25px;
     margin: 20px 0 20px 40px;
-    border-radius: 8px;
     position: relative;
     box-shadow: -5px 5px 41px -18px rgba(0,0,0,0.75);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+    border: 1px solid #cbd4c2;
 }
 
 .main__professionnal-job span{
@@ -372,8 +393,7 @@ article img:hover{
     padding: 4px;
     border-radius: 8px;
     margin-top: 0.8em;
-    margin-left: 0.8em;
-    
+    margin-left: 0.8em;  
 }
 
 .main__professionnal-job h2{
@@ -394,31 +414,6 @@ article img:hover{
     color:grey;
 }
 
-.main__professionnal-job:before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background-color: #3d3743;
-    left: -10px;
-    top: 50%;
-    transform: translatey(-50%) rotate(45deg);
-    position: absolute;
-    z-index: -1;
-    border: 2px solid #000;
-}
-
-.main__professionnal-job:after {
-    content: '';
-    width: 10px;
-    height: 10px;
-    background: #97b196;
-    border-radius: 50%;
-    border: 2px solid #3d3743;
-    left: -33px;
-    top: 50%;
-    transform: translatey(-50%) rotate(45deg);
-    position: absolute;
-}
 
 .main__professionnal-job:hover{
     background-color: #29232e;
@@ -442,6 +437,7 @@ footer{
     align-items: center;
     width: 100%;
     height: 120px;
+    margin-top: 3em;
 }
 footer section{
     display: flex;
@@ -548,13 +544,14 @@ footer p:hover{
         width: 100%;
     }
     .main__about-me{
-        width:90%;
-        padding: 0;
-        margin:1em auto ;
+        width:80%;
+        padding: 1em 0 1em 0;
+        margin:0 auto ;
         display: flex;
         align-items: center;
         flex-direction: column;
     }
+
     .main__professionnal-job{
         box-sizing: border-box;
         flex-wrap: wrap;
@@ -596,7 +593,7 @@ footer p:hover{
         height: 40px;
     }
     .main__about-me{
-        width:90%;
+        width:80%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -606,12 +603,23 @@ footer p:hover{
         display: flex;
         flex-direction: column;
     }
-
-
+    .main__skills__tree li p{
+        font-size: 15px;
+    }
+    .main__skills__tree li img{
+        width: 30px;
+        margin:0.5em;
+    }
+    div.main__gallery-title{
+        width:90%;
+    }
 }
 @media(max-width:430px){
     header{
         max-height: 200px;
+    }
+    h2.cybr-btn{
+        font-size: 20px;
     }
     div img+p{
         bottom: 18px
@@ -633,13 +641,23 @@ footer p:hover{
         opacity: unset;
     }
     .main__about-me{
-        width:90%;
+        width:80%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .main__skills__tree__softs{
-        width:90%;
+    .main__skills__tree i{
+        display: none;
+    }
+    .main__skills__tree li{
+        width:max-content;
+        flex-direction: column;
+    }
+    .main__skills__tree li p{
+        font-size: 15px;
+    }
+    .main__skills__tree li img{
+        width: 30px;
     }
     div.main__gallery-title{
         width:90%;
