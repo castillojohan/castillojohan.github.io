@@ -286,14 +286,9 @@ div.main__gallery-title{
     margin: 0 auto;
     max-width: 1000px;
     padding: 1em 0 1em 0;
-    background-color: #3d3743;
-}
-.main__gallery h2::before, .main__gallery h2::after{
-    background-color: #3d3743;
 }
 .main__gallery h2{
-    margin-top: 1em;
-    background-color:#281b25 ;
+    margin-top: 1em;;
 }
 
 .main__gallery__portfolio{
@@ -348,15 +343,7 @@ article img:hover{
     margin: 0em auto;
     max-width: 1000px;
     padding: 1em 0;
-    background-color: #3d3743;
 }
-#xpro h2.cybr-btn{
-    background-color: #281b25;
-}
-#xpro h2::before, #xpro h2::after{
-    background-color:#3d3743 ;
-}
-
 
 .main__professionnal-job:nth-child(even)::before{
     content:"";
@@ -364,7 +351,7 @@ article img:hover{
     height: 40px;
     transform: rotate(45deg);
     position:absolute;
-    background-color: #3d3743;
+    background-color: #281b25;
     border-left: 1px solid #cbd4c2;
     right:-20px;
     bottom: -20px;
@@ -375,14 +362,14 @@ article img:hover{
     height: 23px;
     transform: rotate(45deg);
     position: absolute;
-    background-color:#3d3743;
+    background-color:#281b25;
     border-right: 1px solid #cbd4c2;
     left: -20px;
     top: -15px;
 }
 
 .main__professionnal-job {
-    background-color: #281b25;
+    background-color: #3d3743;
     padding: 25px;
     margin: 20px 0 20px 40px;
     position: relative;
@@ -397,6 +384,7 @@ article img:hover{
     font-size: 18px;
     color: #97b196;
     border: 2px solid #535c68;
+    background-color: #281b25;
     padding: 4px;
     border-radius: 8px;
     margin-top: 0.8em;
@@ -678,7 +666,7 @@ footer p:hover{
     }
 }
 
-@media(max-width:350px){
+@media(max-width:376px){
     html{
         width:95%;
         margin: 0 auto;
@@ -702,6 +690,15 @@ footer p:hover{
     .main__professionnal-job h2, .main__professionnal-job span{
         font-size: 12px;
     }
+    .main__skills__tree__softs{
+        width: 67%;
+        align-items: flex-start;
+    }
+    .main__skills__tree__softs ul{
+        width:100%;
+        align-content: center;
+        display:flex;
+    }
     #skills{
         width:100%;
     }
@@ -720,8 +717,10 @@ footer p:hover{
     .main__skills__tree__softs li p{
         font-size: 10px;
     }
+    .main__skills__tree li::before, .main__skills__tree li::after{
+        display: none;
+    }
     #gallery{
         width:100%;
     }
-
 }
