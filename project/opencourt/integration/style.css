@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300&display=swap');
+@import url('./booking-history.css');
 
 html{
     --theme-blue-primary: #2e425b;
@@ -22,6 +23,9 @@ html{
     h3{
         font-size: 1.6em;
     }
+    ul{
+        list-style: none;
+    }
 }
 
 .theme-green{
@@ -38,9 +42,14 @@ body{
     margin: 0 auto;
 }
 
+.burger{
+    display: none;
+}
+
 main{
     width: 90%;
     margin: 2em auto 1em auto;
+    min-height: 65vh;
 }
 
 header{
@@ -82,28 +91,13 @@ header{
             filter: drop-shadow( 2px 2px black );
         }
     }
-    &::after{
-        content: "";
-        height: 90px;
-        width: 100%;
-        position: absolute;
-        z-index: -2;
-        background-color: var(--theme-primary);
-        transform: rotate(1deg);
-        top: 105px;
-        left: 0px;
-    }
 }
 
 nav{
     display: flex;
     align-self: flex-end;
     margin-left: 3em;
-    ul{
-        display: inline;
-    }
     li{
-        list-style: none;
         border-right: 2px solid var(--theme-secondary);
         display:inline-block;
         position:relative;
@@ -141,6 +135,50 @@ nav{
             z-index: -1;
             border-radius: 6px;
         }
+    }
+    div{
+        &.side-container{
+            background-color: var(--theme-primary);
+            position:fixed;
+            height: 100%;
+            width:250px;
+            right: -250px;
+            top:0;
+            z-index: 999;
+            transition: right 0.5s ease;
+            &.showed{
+                right:0; 
+            }
+            li{
+                border: unset;
+            }
+            .close-burger{
+                position: absolute;
+                right: .5em;
+                top:.5em;
+                width:40px;
+                height:40px;
+                font-size: 1.5em;
+                text-align: center;
+            }
+            ul{
+                position: fixed;
+                top: 2.5em;
+            }
+        }
+    }
+    div:last-child{
+        padding:.5em;
+        cursor: pointer;
+    }
+    div>a{
+        span{
+        display: block;
+        width: 35px;
+        height:5px;
+        margin: 6px 0;
+        background-color: var(--theme-secondary);
+        }    
     }
 }
 
@@ -395,6 +433,32 @@ form{
     }
 }
 
+.settings{
+    margin: 3.5em auto 1em auto;
+}
+
+.navigation-links{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    a{
+        display: flex;
+        gap : 3px;
+        background-color: var(--theme-primary);
+        color: var(--theme-secondary);
+        border: 1px solid var(--theme-primary);
+        padding: 1em ;
+        border-radius: 10px;
+        &:hover{
+            opacity: .8;
+        }
+    }
+    .del-button{
+        background-color: darkred;
+        color: var(--theme-secondary);
+    }
+}
+
 .blur-pattern{
     visibility: hidden;
     opacity: 0;
@@ -533,4 +597,174 @@ footer{
         padding: .6em;
     }
 
+}
+@media screen and (max-width:1400px){
+    header
+        section{
+            justify-content: space-between;
+            h1{
+                max-width: fit-content;
+            }
+        } 
+        section>nav{
+        align-self: center;
+    }
+    nav ul:first-of-type{
+        display: none;
+    }
+    .burger{
+        display: unset;
+    }
+    .main__slider{
+        height: 12em; 
+        position: relative;
+        h2{
+            font-size: 20px;
+        }
+        img{
+            object-fit: cover;
+            width:100%;
+            max-height: 13em;
+            left:0;
+        }
+        .slider__nav{
+            font-size: 5em;
+            margin: -5% 0%;
+            z-index: 6;
+        }
+        .slider__overlay{
+            width: 100%;
+            left:0;
+        }
+    }
+}
+
+@media screen and (max-width:900px){
+    header{
+        section>h1{
+            font-size: 2em;
+            max-width: 10em;
+        }
+        section>section{
+            max-width: 8.5em;
+            border-radius: 15px;
+            margin-left: 5px;
+            justify-content: center;
+            p{
+                font-size: 1.8em;
+            }
+            svg{
+                margin-left:.5em;
+                align-self: center;
+                margin-top: unset;
+                width:unset;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    article{
+        font-size: 14px;
+        margin: 2em auto;
+        h2{
+            font-size: 20px;
+        }
+        p{
+            max-height: 20em;
+            overflow: hidden;
+        }
+    }
+}
+
+@media screen and (max-width:576px){
+    header{
+        &>section{
+            position:relative;
+            display: block;
+            height: fit-content;
+            padding-top: 1em;
+            h1{
+                text-align: center;
+                margin: .5em auto;
+            }
+            &>section{
+                margin: 0 auto;
+            }
+            nav div:last-child{
+                position:absolute;
+                margin: 1em 1em;
+                top:0;
+                right:0;
+            }
+        }
+    }
+    main{
+        width:100%;
+        .main__slider{
+            margin: 1em 0;
+            img{
+                object-fit: fill;
+            }
+            .slider__nav{
+                filter: drop-shadow( 2px 2px 3px black );
+                .left-arrow, .right-arrow{
+                    font-size: .6em;
+                    margin: 1.5em .1em;
+                    opacity: 1;
+                }
+            }
+            
+            .slider__overlay{
+                h2{
+                    font-size: 1em;
+                }
+            }
+        }
+        article, article:nth-child(2n){
+            padding: unset;
+            header{
+                flex-flow: column wrap;
+                h2{
+                    margin:.5em;
+                }
+            }
+            section:first-of-type{
+                flex-direction: column;
+                align-items: center;
+            }
+            img{
+                object-fit: cover;
+                max-width: 200px;
+                margin: .5em 0 0 0;;
+            }
+            p{
+                max-height: 12em;
+                margin: 1em 1em;
+            }
+        }
+    }
+    footer{
+        flex-direction: column;
+        justify-content: center;
+        section{
+            width: 100%;
+            align-items: center;
+            ul{
+                display: flex;
+                flex-direction: row;
+                padding: unset;
+            }
+            &>div:first-child{
+                flex-direction: column;
+                height:fit-content;
+                p{
+                    margin-top: .1em;
+                }
+            }
+        }
+        svg{
+            width:30px;
+        }
+    }
 }
